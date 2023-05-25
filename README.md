@@ -4,6 +4,9 @@ Note: most of the core code is from the official implementation of [usnistgov/SP
 
 - output the predictions
 - calculate the accuracy using only part of the input data
+- print accuracies in a format that is compatible with my plotting script
+- support multiple files as input
+- use `d` = [8, 16, 32, 64, 96] instead of only 16 (as in official implementation)
 
 ## Usage
 
@@ -24,16 +27,19 @@ pip install numpy
 ### Run the test
 
 ```bash
-usage: multiMMC.py [-h] [-b] filename
+usage: multiMMC.py [-h] -f FILES [FILES ...] [-u] [-d DATASET] [-c COLOR]
 
 MultiMMC Python Wrapper
 
-positional arguments:
-  filename
-
 optional arguments:
-  -h, --help       show this help message and exit
-  -b, --bitstring  run input as bitstring
+  -h, --help            show this help message and exit
+  -f FILES [FILES ...], --files FILES [FILES ...]
+                        files to test
+  -u, --human           human readable
+  -d DATASET, --dataset DATASET
+                        override dataset name
+  -c COLOR, --color COLOR
+                        override color name
 ```
 
 ## NIST License notice
